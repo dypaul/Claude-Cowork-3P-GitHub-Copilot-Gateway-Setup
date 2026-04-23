@@ -80,18 +80,18 @@ Tracked at: **[anthropics/claude-code#52526](https://github.com/anthropics/claud
 **Workaround:** The script defaults to one model per family (`--all-models` overrides this,
 but models from the same family will be indistinguishable in the picker).
 
-### Claude Code CLI requires a proxy
-
-Claude Code CLI does not have a Gateway connection mode like Cowork 3P. It hardcodes `x-api-key` authentication, while GitHub Copilot expects `Authorization: Bearer`. This means Claude Code CLI cannot connect directly to Copilot — a local proxy is required to rewrite the auth header.
-
-Feature request for parity: **[anthropics/claude-code#52572](https://github.com/anthropics/claude-code/issues/52572)**
-
 ### Opus 4.7 incompatible with Cowork
 
 Cowork sends `thinking.type: "enabled"` but Opus 4.7 requires `thinking.type: "adaptive"` +
 `output_config.effort`. Every request fails with a 400 error.
 
 Tracked at: **[anthropics/claude-code#52541](https://github.com/anthropics/claude-code/issues/52541)**
+
+### Claude Code CLI requires a proxy
+
+Claude Code CLI does not have a Gateway connection mode like Cowork 3P. It hardcodes `x-api-key` authentication, while GitHub Copilot expects `Authorization: Bearer`. This means Claude Code CLI cannot connect directly to Copilot — a local proxy is required to rewrite the auth header.
+
+Feature request for parity: **[anthropics/claude-code#52572](https://github.com/anthropics/claude-code/issues/52572)**
 
 **Workaround:** The script automatically excludes `claude-opus-4.7` and selects `claude-opus-4.6` instead.
 
