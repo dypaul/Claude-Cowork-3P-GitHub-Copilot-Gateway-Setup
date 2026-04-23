@@ -87,13 +87,15 @@ Cowork sends `thinking.type: "enabled"` but Opus 4.7 requires `thinking.type: "a
 
 Tracked at: **[anthropics/claude-code#52541](https://github.com/anthropics/claude-code/issues/52541)**
 
+**Workaround:** The script automatically excludes `claude-opus-4.7` and selects `claude-opus-4.6` instead.
+
 ### Claude Code CLI requires a proxy
 
 Claude Code CLI does not have a Gateway connection mode like Cowork 3P. It hardcodes `x-api-key` authentication, while GitHub Copilot expects `Authorization: Bearer`. This means Claude Code CLI cannot connect directly to Copilot — a local proxy is required to rewrite the auth header.
 
 Feature request for parity: **[anthropics/claude-code#52572](https://github.com/anthropics/claude-code/issues/52572)**
 
-**Workaround:** The script automatically excludes `claude-opus-4.7` and selects `claude-opus-4.6` instead.
+**Workaround:** Use a local proxy daemon such as claudegate to handle the auth header translation.
 
 ## How it works
 
